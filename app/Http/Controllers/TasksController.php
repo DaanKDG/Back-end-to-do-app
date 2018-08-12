@@ -78,9 +78,16 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $task)
     {
-        //
+        $this ->validate($request, ['title' => 'required','description' => 'required']);
+
+        $task -> title = $request->input('title');
+        $task -> description = $request->input('description');
+        $task -> completed = 0;
+        $task->save();
+
+        return redirect('/tasks')->with('success', 'Task edited');
     }
 
     /**
