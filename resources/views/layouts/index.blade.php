@@ -12,6 +12,7 @@
                             <strong>Task created: {{$task -> created_at -> diffForHumans()}}</strong>
                             <hr>
                             <p>{{count($task->comments)}} comments</p>
+                            <a href="{{ route("tasks.edit", ["id" => $task->id]) }}"><button class="btn btn-outline-light">Edit</button></a> 
                         </div>
                     @endforeach  
             @endif   

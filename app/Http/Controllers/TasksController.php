@@ -66,9 +66,9 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Task $task)
     {
-        //
+        return view('layouts.edit', compact('task')); 
     }
 
     /**
