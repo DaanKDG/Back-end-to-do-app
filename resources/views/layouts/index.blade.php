@@ -13,6 +13,10 @@
                             <hr>
                             <p>{{count($task->comments)}} comments</p>
                             <a href="{{ route("tasks.edit", ["id" => $task->id]) }}"><button class="btn btn-outline-light">Edit</button></a> 
+                            {!! Form::open(['action' => ['TasksController@destroy', $task->id], 'method' => 'POST', 'class'=> 'float-right']) !!}
+                                 {{Form::hidden('_method','DELETE')}}
+                                 {{Form::submit('Delete', ['class' => 'btn btn-outline-danger'])}}
+                            {!! Form::close() !!} 
                         </div>
                     @endforeach  
             @endif   
