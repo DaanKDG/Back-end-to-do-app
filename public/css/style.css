@@ -1,0 +1,81 @@
+body {
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #222222;
+    color:white;
+}
+
+.navbar a {
+    color: white;
+    transition: all .2s ease-in;
+}
+
+.navbar {
+
+background-color:  rgb(255,82,82);
+}
+.nav-link {
+
+    padding: 0.5rem 0.5rem !important;
+    
+}
+
+.navbar-toggler {
+
+    background-color: white;
+
+}
+.main {
+margin-top: 150px;
+min-height: 150px;
+text-align: center;
+color:white;
+}
+.main a {
+transition: all .2s ease-in;
+color: white;
+text-align: center;
+padding: 10px 16px;
+text-decoration: none;
+font-size: 17px;
+width: 50px;
+}
+.main h4 {
+padding-bottom: 30px;
+}
+.border {
+
+    border: 1px solid white;
+    border-radius: 15px;
+    }
+    
+    .navbar a:hover, .main a:hover {
+    color:rgb(255,82,82);
+    }
+     .main a.border-red:hover {
+    border: 1px solid rgb(255,82,82) !important;
+    }
+    .icon-size {
+        font-size: 40px;
+        color:  rgb(255,82,82);
+        padding-top: 20px;
+    }
+ .tasks a {
+    color: rgb(255,82,82);
+    text-decoration: none;
+}
+.tasks {
+    
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.create-btn h1, .create-btn i {
+    display:inline-block;
+}
+.create-btn i {
+    font-size: 30px;
+    padding: 20px 0px 20px 0px;
+}
