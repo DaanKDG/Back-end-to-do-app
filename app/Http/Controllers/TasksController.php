@@ -102,6 +102,7 @@ class TasksController extends Controller
      */
     public function destroy(Task $task)
     {
+        foreach($task->comments as $comment) { $comment->delete(); }
         $task->delete();
         return redirect('/tasks')->with('success', 'Task removed');
     }
