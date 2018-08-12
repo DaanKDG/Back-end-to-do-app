@@ -5,7 +5,7 @@
             <h1></h1> <a href="{{route("tasks.create")}}"><i class="fas fa-plus-circle icon-size"></i></a>
         </div>   
             @if (count($tasks) > 0)
-                    @foreach($tasks as $task)
+                    @foreach($user->tasks as $task)
                         <div class="tasks">
                             <a href="{{ route("tasks.show", ["id" => $task->id]) }}"><h4><strong>{{$task->title}} </strong></h4></a> 
                             <p>Description: {{$task->description}}</p>

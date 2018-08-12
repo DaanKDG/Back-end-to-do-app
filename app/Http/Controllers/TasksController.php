@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Task;
 use App\Comment;
+use App\User;
 
 class TasksController extends Controller
 {
@@ -16,9 +17,10 @@ class TasksController extends Controller
      */
     public function index()
     {
+        $user = User::find(Auth()->id());
         $tasks = Task::latest()->get();
         $comments = Comment::all();
-        return view('layouts.index', compact('tasks'));
+        return view('layouts.index', compact('tasks', 'user', 'comments'));
     }
 
     /**
@@ -45,6 +47,7 @@ class TasksController extends Controller
         $task -> title = $request->input('title');
         $task -> description = $request->input('description');
         $task -> completed = 0;
+        $task -> user_id = auth()->id();
         $task->save();
 
         return redirect('/tasks')->with('success', 'Task created');
