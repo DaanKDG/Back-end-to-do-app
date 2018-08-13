@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 use App\Task;
 use App\Comment;
 use App\User;
@@ -17,11 +18,17 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $user = User::where('id',Auth()->id())->with(['tasks','comments' => function ($query) {
+        
+        $user = User::where('id',Auth()->id())->with(['tasks' => function ($query) {
             $query->latest();
         }])->first();
 
-         return view('layouts.index', compact('user'));
+        $comments = Task::where('user_id',Auth()->id())->with(['comments' => function ($query) {
+            $query->latest();
+        }])->first();
+
+   
+      return view('layouts.index', compact('user', 'comments'));
     }
 
     /**

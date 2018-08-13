@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     font-family: 'Ubuntu', sans-serif;
     background-color: #222222;
-    color:white;
+    color:black;
 }
 
 .navbar a {
@@ -80,3 +80,12 @@ padding-bottom: 30px;
     font-size: 30px;
     padding: 0px 0px 20px 0px;
 }
+.card {
+    display:inline-block;
+}
+.card-title a {
+    padding: none;
+    text-decoration: none;
+    color:rgb(255,82,82);
+}
+
