@@ -17,10 +17,11 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth()->id());
-        $tasks = Task::latest()->get();
-        $comments = Comment::all();
-        return view('layouts.index', compact('tasks', 'user', 'comments'));
+        $user = User::where('id',Auth()->id())->with(['tasks','comments' => function ($query) {
+            $query->latest();
+        }])->first();
+
+         return view('layouts.index', compact('user'));
     }
 
     /**
@@ -102,8 +103,13 @@ class TasksController extends Controller
      */
     public function destroy(Task $task)
     {
-        foreach($task->comments as $comment) { $comment->delete(); }
+        foreach($task->comments as $comment) 
+        { 
+            $comment->delete(); 
+        }
+        
         $task->delete();
+
         return redirect('/tasks')->with('success', 'Task removed');
     }
 }
