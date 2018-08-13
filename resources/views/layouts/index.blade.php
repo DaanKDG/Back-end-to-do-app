@@ -17,9 +17,9 @@
             <button type="button" class="btn btn-outline-danger" data-toggle="popover" data-trigger="hover" title="{{count($task->comments)}} comments" data-html="true"
                     data-content=" @php foreach($task->comments as $comment)
                                         { 
-                                             echo '<p>' . $comment->body . '</p> <hr>'; 
-                    
-                                        } @endphp"> comments</button>
+                                           echo '<p>' . $comment->body . '</p> <hr>'; 
+                                        } 
+                                   @endphp"> comments</button>
 
             <a href="{{ route("tasks.edit", ["id" => $task->id]) }}" class="card-link"><button class="btn btn-outline-dark">Edit</button></a>
 
