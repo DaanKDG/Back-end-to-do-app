@@ -84,7 +84,11 @@ class TasksController extends Controller
      */
     public function show(Task $task)
     {
-      return view('layouts.show', compact('task'));
+      Carbon::setLocale('nl');
+      setlocale(LC_TIME, 'Dutch');
+      $dateToday = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now());
+
+      return view('layouts.show', compact('task', 'dateToday'));
     }
 
     /**

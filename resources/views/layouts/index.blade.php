@@ -11,15 +11,15 @@
                         <div class="top-right-icons">
                                 {!! Form::open(['action' => ['TasksController@destroy', $task->id],'method' => 'POST', 'class'=> 'float-right']) !!}
                                         {{Form::hidden('_method','DELETE')}}
-                                        {{Form::button('<i class="far fa-trash-alt icon-size"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer'])}}
+                                        {{Form::button('<i data-toggle="tooltip" title="Verwijderen" class="far fa-trash-alt icon-size"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer'])}}
                                 {!! Form::close() !!} 
 
                            @if($task->completed == 0)
 
-                                <a href="{{ route("tasks.edit", ["id" => $task->id]) }}" class="float-right"><i class="far fa-edit icon-size mr-1 "></i></a>
+                                <a href="{{ route("tasks.edit", ["id" => $task->id]) }}" class="float-right"><i data-toggle="tooltip" title="Bewerk" class="far fa-edit icon-size mr-1 "></i></a>
                                 {!! Form::open(['action' => ['TasksController@update', $task->id],'method' => 'POST', 'class'=> 'float-right']) !!}
                                         {{Form::hidden('_method','PUT')}}
-                                        {{Form::button('<i class="far fa-calendar-check icon-size mr-2"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer'])}}
+                                        {{Form::button('<i data-toggle="tooltip" title="Voltooien" class="far fa-calendar-check icon-size mr-2"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer'])}}
                                 {!! Form::close() !!} 
                            @endif
             
@@ -40,14 +40,14 @@
                                                    @endphp"><i class="far fa-clipboard icon-size mr-1"></i></a>
                                         @if($task->completed == 0) 
 
-                                        <a href="#demo{{$task->id}}" class="" data-toggle="collapse"><i class="fas fa-plus-circle icon-size"></i></a>
+                                        <a href="#demo{{$task->id}}" class="" data-toggle="collapse"><i data-toggle="tooltip" title="Comment" class="fas fa-plus-circle icon-size"></i></a>
                                         <div id="demo{{$task->id}}" class="collapse">
                                                 {!! Form::open(['action' => ['CommentsController@store', $task->id],'method' => 'POST', 'class'=> 'form-group row']) !!}
                                                         <div class="form-group row">
                                                                 <div class="col-9">
                                                                         {{Form::text('body', '', ['class' => 'form-control form-control-sm ml-3 mt-2', 'placeholder' => 'Comment' , 'maxlength' => '30'])}}
                                                                 </div>
-                                                        {{Form::button('<i class="far fa-check-circle icon-size mt-2"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer ml-2'])}}
+                                                        {{Form::button('<i class="far fa-check-circle icon-size mt-2"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer ml-2 '])}}
                                                         </div>
                                                 {!! Form::close() !!} 
                                         </div>
@@ -61,6 +61,9 @@
  <script>
     $(document).ready(function(){
             $('[data-toggle="popover"]').popover();   
+    });
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
     });
 </script>
 @endsection

@@ -46,7 +46,7 @@ class CommentsController extends Controller
 
         Comment::create([ 'body' => request('body') , 'task_id' => $id, 'user_id' => auth()->id() ]);
 
-        return back()->with('success', 'Comment added');
+        return back()->with('success', 'Comment toegevoegd');
         
     }
 
@@ -58,7 +58,7 @@ class CommentsController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
+       // return view('comments.show', compact('comment')); 
     }
 
     /**
@@ -67,9 +67,9 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit(Task $task, Comment $comment)
     {
-        //
+        return view('comments.edit', compact('comment', 'task')); 
     }
 
     /**
@@ -79,9 +79,17 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
-    {
-        //
+    public function update(Request $request, Task $task, Comment $comment)
+    {      
+            $this ->validate($request, ['body' => 'required|max:30']);
+            $requestData = $request->all(); 
+
+            $comment['body'] = $requestData['body'];
+            $comment->save();
+
+            return redirect('tasks')->with('success', 'Comment aangepast');
+
+    
     }
 
     /**
@@ -90,8 +98,9 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Task $task , Comment $comment)
     {
-        //
+        $comment->delete();
+        return back()->with('success', 'Comment verwijderd');
     }
 }

@@ -2,7 +2,7 @@
 
 @section ('content')
 <div class="edit-task-form">
-    <h1>Edit the to-do</h1>
+    <h1>Bewerk de to-do</h1>
     {!! Form::open(['action' => ['TasksController@update', $task->id], 'method' => 'POST']) !!}
 
     <div class="form-group">	

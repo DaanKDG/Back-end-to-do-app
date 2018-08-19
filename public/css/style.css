@@ -2,77 +2,65 @@ body {
     margin: 0 auto;
     font-family: 'Ubuntu', sans-serif;
     background-color: #222222;
-    color:black;
+    color: black;
 }
 
 .navbar a {
     color: white;
-   
 }
 .dropdown-nav {
-
     background-color: rgb(255,82,82);
 }
 .dropdown-item:focus, .dropdown-item:hover {
-
     background-color: rgb(255,82,82) !important;
-    color: white;
-    
+    color: white; 
 }
 .navbar {
     margin-bottom: 20px;
-
     background-color:  rgb(255,82,82);
 }
 .nav-link {
-
     padding: 0.5rem 0.5rem !important;
-    
 }
-
 
 .main {
-margin-top: 150px;
-min-height: 150px;
-text-align: center;
-color:white;
+    margin-top: 150px;
+    min-height: 150px;
+    text-align: center;
+    color:white;
 }
 .main a {
-transition: all .2s ease-in;
-color: white;
-text-align: center;
-padding: 10px 16px;
-text-decoration: none;
-font-size: 17px;
-width: 50px;
+    transition: all .2s ease-in;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 50px;
 }
 .main h4 {
-padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 .border {
-
     border: 1px solid white;
     border-radius: 15px;
-    }
+}
     
-     .main a:hover {
+.main a:hover {
     color:rgb(255,82,82);
-    }
-     .main a.border-red:hover {
+}
+.main a.border-red:hover {
     border: 1px solid rgb(255,82,82) !important;
-    }
-    .icon-size {
-        font-size: 20px;
-        color:  rgb(255,82,82);
-      
-    }
+}
+.icon-size {
+    font-size: 20px;
+    color:  rgb(255,82,82);
+}
 
- .tasks a {
+.tasks a {
     color: rgb(255,82,82);
-    
 }
 .tasks {
-    
     border: 2px solid #ccc;
     padding: 15px;
     border-radius: 10px;
@@ -101,8 +89,7 @@ padding-bottom: 30px;
 .card-title {
     padding-top: 5px;
 }
-.card-header-height {
-    
+.card-header-height {  
     /* height: 50px; */
     max-height: 65px;  
 }
@@ -110,13 +97,13 @@ padding-bottom: 30px;
     height: 46px;
 }
 .card:hover > .top-right-icons { opacity: 1;}
+
 .top-right-icons {
     transition: all 0.5s ease-in;
     opacity: 0;
     position: absolute;
     top: 5px;
     right: 10px;
-
 }
 .card-body {
     padding: 20px 20px 0px 20px !important;
@@ -128,13 +115,13 @@ padding-bottom: 30px;
     color: rgb(255,82,82);
 }
 .icon-home {
-
-        font-size: 40px;
-        color: rgb(255,82,82);
-        padding-top: 20px;
+    font-size: 40px;
+    color: rgb(255,82,82);
+    padding-top: 20px;
 }
+
 .create-task-form {
-  max-width: 450px;    
+    max-width: 450px;    
     font-weight: bold;
     color: rgb(255,82,82);
 }
@@ -146,9 +133,31 @@ padding-bottom: 30px;
 .pointer{ cursor: pointer; }
 
 .border-red {
-
- border: 3px solid rgb(255,82,82);
+    border: 3px solid rgb(255,82,82);
 }
 .form-check-label {
     padding: 0 !important;
+}
+.comments {
+    color:white;
+}
+th {
+    color: rgb(255,82,82);
+}
+.edit-icon {
+    transition: all 0.5s ease-in;
+    color: rgb(255,82,82);
+    opacity: 0;
+}
+
+tr:hover  .edit-icon { opacity: 1;}
+.edit-comment h1 {
+    color: rgb(255,82,82);
+
+}
+.edit-comment {
+    max-width: 450px;
+}
+.inline {
+    display: inline-block;
 }
