@@ -18,7 +18,9 @@ class CreateTasksTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->mediumText('description');
+            $table->datetime('end_date');
             $table->integer('completed');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

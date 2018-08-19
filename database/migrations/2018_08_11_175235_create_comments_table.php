@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id');
             $table->integer('task_id');
             $table->string('body');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

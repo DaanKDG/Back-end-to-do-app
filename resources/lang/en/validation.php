@@ -125,9 +125,16 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => 'E-mail veld is vereist',
         ],
+        'title' => [
+            'required' => 'Titel veld is vereist'
+        ],
+        'description' => [
+            'required' => 'Beschrijving veld is vereist',
+            'max:value' => 'Beschrijving mag niet meer dan 60 tekens hebben'
+        ]
     ],
 
     /*
