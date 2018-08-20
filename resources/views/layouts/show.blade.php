@@ -44,13 +44,13 @@
                                         {{Form::button('<i class="far fa-check-circle icon-size mt-2"></i>', ['type' =>'submit', 'class' => 'submit-btn pointer ml-2 '])}}
                                     </div>
                                 {!! Form::close() !!} 
-                                        </div>
-                                        @endif
                            </div>
-                  </div>    
+                        @endif
+                   </div>
+         </div>    
       
-      </div>
- @include('info.table')
+</div>
+ @include('info.table')     
 
 <script>
     $(document).ready(function(){

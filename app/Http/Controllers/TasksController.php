@@ -35,8 +35,7 @@ class TasksController extends Controller
               $user->load(['comments', 'tasks' => function ($query) { $query->Completed(); }]);
        }
 
-       Carbon::setLocale('nl');
-       setlocale(LC_TIME, 'Dutch');
+
        $dateToday = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now());
 
        return view('layouts.index', compact('user', 'request', 'dateToday'));
@@ -84,8 +83,7 @@ class TasksController extends Controller
      */
     public function show(Task $task)
     {
-      Carbon::setLocale('nl');
-      setlocale(LC_TIME, 'Dutch');
+
       $dateToday = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now());
 
       return view('layouts.show', compact('task', 'dateToday'));

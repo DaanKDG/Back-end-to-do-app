@@ -5,7 +5,7 @@
 <div class="create-btn">     
    <a href="{{route("tasks.create")}}"><i class="fas fa-plus-circle icon-size"></i></a>
 </div>
-<div class="card-section clearfix">
+<div class="card-section">
         @foreach($user->tasks as $task)
                 <div class="card mr-3 mb-4 float-left task-style {{ ($dateToday->gt($task->end_date)) ? 'border-red' : '' }}">
                         <div class="top-right-icons">

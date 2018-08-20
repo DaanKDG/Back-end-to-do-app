@@ -25,12 +25,12 @@ class User extends Authenticatable
 
     public function tasks()
     {
-        return $this->hasMany(task::class);
+        return $this->hasMany('App\Task');
     }
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany('App\Comment');
     }
 
 
